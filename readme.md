@@ -6,8 +6,6 @@ Provides the same type safety and conventions of [@vanilla-extract/sprinkles](ht
 
 [Try it on StackBlitz](https://stackblitz.com/edit/vanilla-extract-constrained)
 
-> Heads up: This package does not follow semantic versioning. Changes of all types are released to the patch portion of the version string.
-
 ## Usage
 
 Here's how you define your constraints:
