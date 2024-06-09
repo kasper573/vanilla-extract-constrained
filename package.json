@@ -1,0 +1,60 @@
+{
+  "name": "vanilla-extract-constrained",
+  "version": "0.0.10",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kasper573/vanilla-extract-constrained.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./styleResolver": {
+      "require": "./dist/styleResolver.js",
+      "import": "./dist/styleResolver.mjs",
+      "types": "./dist/styleResolver.d.ts"
+    },
+    "./functionEvaluator": {
+      "require": "./dist/functionEvaluator.js",
+      "import": "./dist/functionEvaluator.mjs",
+      "types": "./dist/functionEvaluator.d.ts"
+    }
+  },
+  "bin": {
+    "figma-to-typescript": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "pnpm build --watch",
+    "format": "prettier --write .",
+    "prepublishOnly": "npm run build",
+    "test": "pnpm playwright test -c playwright-ct.config.mjs",
+    "test:watch": "pnpm run test --ui"
+  },
+  "peerDependencies": {
+    "@vanilla-extract/css": "^1.15"
+  },
+  "devDependencies": {
+    "@playwright/experimental-ct-react": "1.42.1",
+    "@playwright/test": "1.42.1",
+    "@types/node": "^20",
+    "@types/react": "^18.2.61",
+    "@vanilla-extract/vite-plugin": "4.0.10",
+    "@vitejs/plugin-react": "4.3.0",
+    "vite": "5.2.13",
+    "prettier": "^3",
+    "typescript": "^5",
+    "tsup": "^8",
+    "csstype": "^3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
